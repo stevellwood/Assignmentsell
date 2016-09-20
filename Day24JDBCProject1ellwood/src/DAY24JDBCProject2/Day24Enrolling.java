@@ -23,23 +23,21 @@ public class Day24Enrolling {
         //double gpa;
        // int major_id;
         //int id = -1;
-        public static void main(String[] args) throws Exception {
+        
+        public Day24Enrolling() throws SQLException{
             JDBCconnect2 connection1 = new JDBCconnect2();
             try {
-           conn=     connection1.connecttoDB();
+                conn=     connection1.connecttoDB();
             } catch (FileNotFoundException e) {
                 // TODO Auto-generated catch block
+               
                 e.printStackTrace();
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
-            }
-            Day24Enrolling d24 = new Day24Enrolling();
-            d24.actforStudent(Student.newstudents);
-        }
-        public Day24Enrolling() throws SQLException{
-            Student st = new Student();//this fills the arraylist
+            }Student st = new Student();//this fills the arraylist
             //this gets around the demand to make static
+            
         }
         public boolean scheduleClasses(Student stu) {
             try {
@@ -53,20 +51,19 @@ public class Day24Enrolling {
                         + "     on c.id = mc.class_id where m.id = ?";
                 //this returns the required classes given a particular major
                 pStmt = conn.prepareStatement(sql);
-                //pStmt.setInt(1, stu.getMajor_id());
-                pStmt.setInt(1, 1);
-                System.out.println(stu.getMajor_id()+" is the 2ndtrymajorid for "+stu.getFullName());  
+                pStmt.setInt(1, stu.getMajor_id());
+                //pStmt.setInt(1, 5);
+                //System.out.println(stu.getMajor_id()+" is the 2ndtrymajorid for "+stu.getFullName());  
                   myRs = pStmt.executeQuery();
                //his method  ResultSet rs = db.getSqlResultSet(sql, this.id);
                 //run query and store in rs table
                 int idx = 0;
                 ArrayList<String> classIds = new ArrayList<String>();//put the rs into arraylist
-                System.out.println("classIds ="+classIds);
-                while(myRs.next()) { // should be multiple
+                    while(myRs.next()) { // should be multiple
                     int classId = myRs.getInt("classId");
                     classIds.add(String.valueOf(classId)); //for whatever reason classids is string arrayl
                     idx++;
-                    System.out.println("fffffffffffffffff");
+                    
                     System.out.println("Major id's adding is "+String.valueOf(classId));
                     if(idx == 2)//only pick 2 form the major
                         break;
@@ -76,7 +73,7 @@ public class Day24Enrolling {
             //    sql = "SELECT id from class where id not in (" + String.join(",", classIds) + ")";
                 sql = "SELECT id from class where id not in (" + String.join(",", classIds) + ")";
                 //String.join(",", classIds) this puts all the elements of classIds into a long list separated by ,
-                System.out.println("Checking"+sql);
+                //System.out.println("Checking"+sql);
                 if(conn!=null) System.out.println("connection working");
                 else if (conn==null) System.out.println("no connection in classid");
                 //System.out.println("Error MyRs" + myRs.getString(1));
@@ -109,7 +106,7 @@ public class Day24Enrolling {
                         throw new Exception("Class was not scheduled for Student!");
                     }
                 }
-
+                System.out.println("===========Processing for "+stu.getFullName()+ " complete ==================");
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -133,8 +130,8 @@ public class Day24Enrolling {
         public String enroll(Student stud) throws Exception {
             //String sql0 ="insert student value (?,?,?,?,?,?);";
             System.out.println("In enroll: " +stud.firstName+" "+stud.lastName+" "+stud.sat+" "+stud.gpa+" "+stud.major);
-            if(conn!=null) System.out.println("connection working");
-            else if (conn==null) System.out.println("no connection");
+//            if(conn!=null) System.out.println("connection working");
+            if (conn==null) System.out.println("no connection");
             //pStmt= conn.prepareStatement("insert student value (?,?,?,?,?,?);");
             String sql2  = "insert into student (first_name, last_name, sat, gpa, major_id) values (?, ?, ?, ?, ?);";
             pStmt= conn.prepareStatement(sql2);
@@ -162,12 +159,15 @@ public class Day24Enrolling {
                     sbf.append("The major selected by " + stud.getFullName() + " was not found.\n");
                 } else {
                     sbf.append("Sorry, but a " + stud.major + " major requires an SAT score of ")
-                      .append(getMinSatScore(-1, stud.major ) + ".\n");
+                      .append(getMinSatScore(-1, stud.major ) + ".\n")
+                      .append("You are being assigned to the General Studies major to prove your competency.");
+                    stud.setMajor_id(7);//7 is for general studies
+                    pStmt.setInt(5,stud.getMajor_id() );
                 }
             } else {//major is ok
                 pStmt.setInt(5,  stud.getMajor_id());//we got this from evalMajor
                 sbf.append("Assigned " + stud.getFullName() + " to the " + stud.major + " major ")
-                  .append("which requires an SAT score of " + getMinSatScore(major_id, "") + ".\n");
+                  .append("which requires an SAT score of " + getMinSatScore(major_id, "") + ".");
             }
             pStmt.executeUpdate();
            //MyRs can be used over and over because it gets erased whenever reassign it
@@ -176,8 +176,8 @@ public class Day24Enrolling {
             String sql = "SELECT LAST_INSERT_ID()";
             
             stmt = conn.createStatement();
-            if(conn!=null) System.out.println("connection working2");
-            else if (conn==null) System.out.println("no connection2");
+//            if(conn!=null) System.out.println("connection working2");
+//            else if (conn==null) System.out.println("no connection2");
             myRs = stmt.executeQuery(sql);
             if(!myRs.next())
                 throw new Exception("Cannot get the LAST_INSERT_ID()");

@@ -38,7 +38,7 @@ public class JDBCconnect2 {
       db = new Db(thedburl, theuser,thepassword);
         myConn = DriverManager.getConnection(thedburl, theuser, thepassword);
       //why does this need cast
-        System.out.println( theuser+ thepassword +thedburl);
+        System.out.println( "debug: "+theuser+ thepassword +thedburl);
       } catch (Exception exc) {
           System.out.println("connection not created1");
           exc.printStackTrace();
