@@ -1,0 +1,58 @@
+
+body {
+  background: #393939; /*this is the grey-black form sublime*/
+  color: white;  /*controls the content color*/
+  font: 14px Helvetica, sans-serif;
+}
+
+#pageall {  /*controls the canvas*/
+  width: 500px;
+  margin: 100px auto;
+}
+
+h1 {
+  font: 26px Georgia, Serif;
+  margin: 0 0 20px 0;  /*3rd controls vert border 4th counters 3rd*/
+}
+form {
+  margin: 50px 0 0 0;
+}
+label {
+  font: bold 20px Helvetica, sans-serif;
+  display: block;  /*do in blocks not inline*/
+  float: left;
+  text-align: right;
+  padding: 5px 10px 0 0;
+  width: 140px;
+}
+input[type=text] {
+  float: left;
+  width: 40px;
+  font: bold 20px Helvetica, sans-serif;
+  padding: 3px 0 0 0;
+  text-align: center;
+}
+form div {
+  overflow: hidden;
+  margin: 0 0 5px 0;
+}
+.button {
+  margin: 0 0 0 5px;
+  text-indent: -9999px;
+  cursor: pointer;
+  width: 29px;
+  height: 29px;
+  float: left;
+  text-align: center;
+  background: url(../images/buttons.png);
+}
+.dec {
+  background-position: 0 -29px;
+  /*this rotates the image*/
+}
+#reset{
+  padding: 20px 0 0 40px;
+}
+.buttons {
+  padding: 20px 0 0 140px;
+}
