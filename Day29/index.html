@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<link rel="stylesheet" type="text/css" href="default22.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <!-- <script src="./js/main.js"></script> -->
+    <script src="./js/slack.js"></script>
+  </head>
+  <body>
+  <h1 class="bg-primary">Messaging for Team C</h1>
+    
+    <div>
+      <div class="column">
+        <p class="bg-success">Channels to message to12</p>
+        <input type="radio" name="channel" value="slackbots"> Slackbots<br>
+        <input type="radio" name="channel" value="main"> Main<br>
+        <input type="radio" name="channel" value="teamc"> Team C<br> </div>
+     
+
+      <div class="column">
+      <form method="post" id="posting" action="">
+        <p class="bg-danger">Message Box</p>
+        <textarea rows="3" cols="50" id="message" >
+            Type message here
+       </textarea>
+       <br>
+       <input type="submit"  value="Send to Slack" class="centering" >
+        <!-- <input type="submit" value="toslack" class="centering"> -->
+       </form>
+      </div>
+   </div>
+   
+    <div id="main">
+    
+
+      <ul id="repos">
+      </ul>
+    </div>
+
+  </body>
+</html>

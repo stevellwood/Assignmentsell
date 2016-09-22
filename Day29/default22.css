@@ -1,0 +1,99 @@
+body {
+  font:normal normal normal 12pt/16.5px  Arial;
+  width: 75%;
+  background-color: 
+}
+/*classs tags you can have multiple sections apply tags*/
+.orangetext {
+  color:orange;
+}
+.centering{/*border: 1px solid silver; it seems that in a div it only spans as far as the text change toa p in a div*/
+  text-align: center;}
+h1,h2,h3{
+  text-align: center;
+}
+#slacking{
+    margin: 0 auto;
+    text-align: center;
+}
+.ltborder{
+  border: 1px solid silver;
+  margin: 5px;
+}
+span { 
+    text-align: left;
+    color:blue;
+  /*text-align: center; you can't text align ina span it is only for minor formatting within a line*/
+   /*also use p span in style section to override this one in a p*/
+  }
+.italictext{
+  font-style:italic;
+}
+/*italic will not be overriden by th span unlie orange text because font-style is not specified.*/
+/*table {
+border:1px solid grey;
+ font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}*/
+/*div is too nonspecific. the page has to many divs!!*/
+div.column {width:48%;   
+  /*this means that 49% taken by all divs by default would dispaly all the way across. will take whole screen unless have something else on the same line like aparagraph*/
+display: inline-block;
+/*inline means put it next horz if fits*/
+text-align: left;
+/*put on left by default. put at center of space available*/
+vertical-align: top;
+}
+
+/*This is for an ID it can only point to one tag in a document vs multipel for .tags*/
+#rightdiv {
+color:black;
+/*this tag will be overriden if there is a more specific tag within the html block like 'span'*/
+}
+#leftdiv {
+color:black;
+/*this tag will be overriden if there is a more specific tag within the html block like 'span'*/
+}
+
+/*#this style only to the section with this tag rightdiv*/
+/*order of prcendence
+tag most specific
+doc (style in head
+    stylesheet linked in head)*/
+table, tr, td {
+    font-family:  sans-serif;
+    border-collapse: collapse;
+    border: 2px;/*doesn't seem to do anything*/
+    border-color: #000000; /*doesn't seem to do anything*/
+    /*this only seems to affect horz borders*/
+    width: 98%;
+}
+
+thead {
+/*  theader that works inside another css spec i tried to call this something else but it only takes thead*/
+  font-style: italic;
+   border: 4px;
+   border-color: #000000;
+
+}
+tbody {
+  font-size: 1.1em; /*refers to body font size*/
+}
+td, th {
+  width: 80px;
+    border: 2px black;
+    text-align: left;
+    padding: 8px; /*this keeps it from hugging the border*/
+}
+/*tr:nth-child(odd) {  this was overrideing bd-info from bootstrap
+    background-color: #dddddd;
+}*/
+#footer p {
+  width: 99%;
+  font-size: .75em;
+  background-color: black;
+  color:silver;
+  font-style: italic;
+  text-align: center;
+}

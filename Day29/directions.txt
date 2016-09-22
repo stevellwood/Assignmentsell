@@ -1,0 +1,28 @@
+directions
+Assignment - Slack messaging via jQuery & Javascript
+
+Your assignment is to build a jQuery/Javascript application to interface with the Slack API.
+
+Details
+
+Post your file in a folder called 'Day29' (no spaces) in your assignments repository, do Git add, commit, and push to GitHub. Post the URL to your assignments repository when submitting the assignment.
+
+Core Challenge
+
+The final display should be in two columns:
+
+On the left side:
+
+A list of all the channels as radio buttons
+Sort them by name ascending
+On the right side
+
+a multiline textbox that spans the width of the left side
+a POST button
+To operate the program, you'd click one of the channels on the left side, type a message in the text box, click the POST button to send the message.
+
+For today, focus on the right side of the display and hard code the channel. Get working the ability to enter text in the message box, click the button, and have the message sent to the channel and then clear the box.
+
+For tomorrow, add the left hand side of the display showing the list of channels with radio buttons and be able to click on one of the channels and have the message sent to that channel.
+
+mytoken: xoxp-63743851541-64142139958-82864436258-1f2525161f02c569b6abe02d92874728
