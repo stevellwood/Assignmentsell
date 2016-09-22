@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Title test</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
     <style>
@@ -11,24 +12,32 @@
       }
     </style>
   </head>
-  <body>
-    <h1>Action Buttons Exercise</h1>
-    <input id="guess" type="text">
-    <button id="record-guess">Submit</button>
 
-    <p id="try-count"></p>
+<body>
+<div id="pageall">
 
-    <table>
-      <thead>
-        <tr>
-          <th>Guess</th>
-          <th>Result</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+ <h1 label for="name">Place your order</h1>
+  <form method="post" action="">
+    <div class="orderow">
+        <label for="name">Item 1</label>
+        <input type="text" name="check1" id="check1" value="0">
+      </div>
+      <div class="orderow">
+        <label for="name">Item 2</label>
+        <input type="text" name="Check2" id="check2" value="0">
+      </div>
+      <div class="orderow">
+        <label for="name">Item 3</label>
+        <input type="text" name="Check3" id="check3" value="0">
+      </div>
+      <!-- <input type="reset" value="reset" id="reset"> -->
+      <div class="buttons">
+        <input type="submit" value="reset" id="reset"></div>
+       <!--  <button class="label" id="reset">Reset</button> -->
+      <!--  -->
+      
 
-    <p class="result"></p>
+    </form>
+  </div>
   </body>
 </html>
