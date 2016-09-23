@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<link rel="stylesheet" type="text/css" href="default23.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <script src="./js/getSlackToken.js"></script>
+    <script src="./js/channels.js"></script>
+    
+    <script src="./js/date.js"></script>
+   <!--  <script src="./js/slack.js"></script> -->
+  </head>
+  <body>
+  <div id="surround" class="ltborder column">
+  <h1 class="italictext">Messaging for Team C</h1>
+    
+   
+      <div class="column" id="leftdiv">
+        <p class="slackyel">Slack Channels</p>
+        <div id="channelrows"></div>
+       <div id="groupchannels" style="display:none"></div>
+        
+     </div>
+<!-- right column -->
+      <div class="column slackyel">
+      <p class="slackyel">Message Box</p>
+        <textarea rows="3" cols="50" id="message" >
+            Type message here
+       </textarea><br>
+      <button type="button" class="centering" id="posting"> Send to Channel </button>
+      <br><br><br>
+      <button type="button" class="centering" value="Show" id="togglechannel">Show Private Channels</button>
+       </div>
+   </div>
+   
+    <br><br><br><br><br>
+    <div id="footer">
+    <p>This page created by Steve Ellwood on September 23,2</p></div>
+    
+      
+   
+
+  </body>
+</html>

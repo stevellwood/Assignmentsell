@@ -1,4 +1,4 @@
-var token = "xoxp-63743851541-64142139958-82864436258-1f2525161f02c569b6abe02d92874728";
+var token = "xoxp-63743851541-64142139958-83228929524-702835a5ede3d0247fa74bdbbe16232e";
 
 // }
 // https://slack.com/api/chat.postMessage
@@ -17,7 +17,7 @@ $("#posting").submit(function(e) {
     e.preventDefault();
         $.ajax("https://slack.com/api/chat.postMessage", {
 	        data:   data,
-	        username: "stevenllwood", //if you omit this it will fail
+	        username: "stevellwood", //if you omit this it will fail
 	        method: "POST"
         }).then(function(result) {
             console.log("ajax function")

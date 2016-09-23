@@ -1,10 +1,10 @@
 body {
   font:normal normal normal 12pt/16.5px  Arial;
-  width: 75%;
+  /*width: 100%;*/
   background-color: 
 }
 /*classs tags you can have multiple sections apply tags*/
-.orangetext {
+.slackyel {
   color:orange;
 }
 .centering{/*border: 1px solid silver; it seems that in a div it only spans as far as the text change toa p in a div*/
@@ -16,9 +16,12 @@ h1,h2,h3{
     margin: 0 auto;
     text-align: center;
 }
-.ltborder{
+#surround{
   border: 1px solid silver;
-  margin: 5px;
+    text-align: center;
+  padding: 10px;
+  margin: 20px;
+  width: 75%;
 }
 span { 
     text-align: left;
@@ -37,7 +40,7 @@ border:1px solid grey;
     width: 100%;
 }*/
 /*div is too nonspecific. the page has to many divs!!*/
-div.column {width:48%;   
+div.column {width:45%;   
   /*this means that 49% taken by all divs by default would dispaly all the way across. will take whole screen unless have something else on the same line like aparagraph*/
 display: inline-block;
 /*inline means put it next horz if fits*/
@@ -89,8 +92,8 @@ td, th {
 /*tr:nth-child(odd) {  this was overrideing bd-info from bootstrap
     background-color: #dddddd;
 }*/
-#footer p {
-  width: 99%;
+#footer{
+  width: 65%;
   font-size: .75em;
   background-color: black;
   color:silver;
