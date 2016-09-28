@@ -1,0 +1,3 @@
+com\ssa\application\Application.class
+com\ssa\controller\WebSiteController.class
+com\ssa\config\MvcConfig.class
