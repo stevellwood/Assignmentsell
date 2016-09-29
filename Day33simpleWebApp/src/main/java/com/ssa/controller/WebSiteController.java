@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class WebSiteController {
 Map<Integer, String> helptexts = new HashMap<Integer, String>();
-    
+boolean initializing = true;
     public void loadHelpTexts() {
         helptexts.put(1, "Restart");
         helptexts.put(2, "Restart again");
@@ -20,7 +20,7 @@ Map<Integer, String> helptexts = new HashMap<Integer, String>();
         helptexts.put(4, "Call tech support");
         helptexts.put(5, "ET Call home");
         
-       
+        initializing = false;
     }
     
     @RequestMapping("/") //go to home page localhost:8080/
@@ -44,9 +44,11 @@ Map<Integer, String> helptexts = new HashMap<Integer, String>();
     @RequestMapping("/help")
     //if don't put anything in after home page (8080) add / and do bleow
     public ModelAndView help(HttpServletRequest request, ModelAndView mv) {
+        if(initializing) {             loadHelpTexts();
+        }
         if(request.getParameter("id") != null){   //looks for parameter on the command or html line
             //mv.addObject("id", request.getParameter("id"));
-            int hid = (int) Integer.parseInt(request.getParameter("id"));
+            int hid = Integer.parseInt(request.getParameter("id"));
             String message = helptexts.get(hid);
             //Id is [1], text is [The text for message 1]
             mv.addObject("id", hid);
