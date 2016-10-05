@@ -1,0 +1,9 @@
+org\ssa\Application.class
+org\ssa\service\IStudentService.class
+org\ssa\dao\StudentDAO.class
+org\ssa\controller\StudentController.class
+org\ssa\entity\Student.class
+org\ssa\configuration\ViewConfiguration.class
+org\ssa\configuration\DbConfiguration.class
+org\ssa\service\StudentService.class
+org\ssa\dao\IStudentDAO.class
